@@ -14,7 +14,7 @@ Ext.define('TDK.view.assetgroup.FRMassetgroup', {
         items: [
             {  name: 'GroupID',fieldLabel: 'Group Id',width:200, hidden:true },
             {  name: 'GroupName', fieldLabel: 'Name', width:300,allowBlank: false},
-            {  name: 'GroupDescription', fieldLabel: 'Description',width:300,allowBlank: false }
+            {  name: 'GroupDescription', fieldLabel: 'Description',width:300,allowBlank: true }
         ]
     }]
     

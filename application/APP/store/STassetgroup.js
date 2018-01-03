@@ -8,9 +8,9 @@
         type: 'ajax',
         actionMethods: {create: 'POST',read: 'POST',update: 'POST',destroy: 'POST'},
         api: {
-            create: base_url + 'Modjs/jsondata/mgroup/create',
-            read: base_url + 'Modjs/jsondata/mgroup/read',
-            update: base_url + 'Modjs/jsondata/mgroup/update'
+            create: base_url + 'assetgroup/create',
+            read: base_url + 'assetgroup/read',
+            update: base_url + 'assetgroup/update'
         },
         reader: {
             type: 'json',
