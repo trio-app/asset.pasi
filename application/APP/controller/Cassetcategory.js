@@ -64,10 +64,10 @@ Ext.define('TDK.controller.Cassetcategory', {
         var st = form.getForm().findField('CategoryID').getValue();
         if(form.isValid()){
             if (st===''){
-            TDK.view.temp.Run.proses('assetcategory/create',valform);
+            TDK.view.temp.Run.proses('Assetcategory/create',valform);
             }else{
 
-                TDK.view.temp.Run.proses('assetcategory/update',valform);
+                TDK.view.temp.Run.proses('Assetcategory/update',valform);
             }
         }
         this.displayOn(0);
@@ -91,7 +91,7 @@ Ext.define('TDK.controller.Cassetcategory', {
             Ext.MessageBox.confirm('Confirm', 'Delete Category : ' + GroupName + '?', 
             function(btnText){
                 if(btnText === "yes"){
-                    TDK.view.temp.Run.proses('assetcategory/delete',form.getForm().getValues());
+                    TDK.view.temp.Run.proses('Assetcategory/delete',form.getForm().getValues());
                     this.donew();
                 }
             }

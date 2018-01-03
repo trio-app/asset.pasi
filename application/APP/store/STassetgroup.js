@@ -8,9 +8,9 @@
         type: 'ajax',
         actionMethods: {create: 'POST',read: 'POST',update: 'POST',destroy: 'POST'},
         api: {
-            create: base_url + 'assetgroup/create',
-            read: base_url + 'assetgroup/read',
-            update: base_url + 'assetgroup/update'
+            create: base_url + 'Assetgroup/create',
+            read: base_url + 'Assetgroup/read',
+            update: base_url + 'Assetgroup/update'
         },
         reader: {
             type: 'json',

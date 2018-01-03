@@ -64,10 +64,10 @@ Ext.define('TDK.controller.Cassetgroup', {
         var st = form.getForm().findField('GroupID').getValue();
         if(form.isValid()){
             if (st===''){
-            TDK.view.temp.Run.proses('assetgroup/create',valform);
+            TDK.view.temp.Run.proses('Assetgroup/create',valform);
             }else{
 
-                TDK.view.temp.Run.proses('assetgroup/update',valform);
+                TDK.view.temp.Run.proses('Assetgroup/update',valform);
             }
         }
         this.displayOn(0);
@@ -91,7 +91,7 @@ Ext.define('TDK.controller.Cassetgroup', {
             Ext.MessageBox.confirm('Confirm', 'Delete Group : ' + GroupName + '?', 
             function(btnText){
                 if(btnText === "yes"){
-                    TDK.view.temp.Run.proses('assetgroup/delete',form.getForm().getValues());
+                    TDK.view.temp.Run.proses('Assetgroup/delete',form.getForm().getValues());
                     this.donew();
                 }
             }

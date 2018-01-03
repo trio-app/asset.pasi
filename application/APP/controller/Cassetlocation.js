@@ -64,10 +64,10 @@ Ext.define('TDK.controller.Cassetlocation', {
         var st = form.getForm().findField('LocID').getValue();
         if(form.isValid()){
             if (st===''){
-            TDK.view.temp.Run.proses('assetlocation/create',valform);
+            TDK.view.temp.Run.proses('Assetlocation/create',valform);
             }else{
 
-                TDK.view.temp.Run.proses('assetlocation/update',valform);
+                TDK.view.temp.Run.proses('Assetlocation/update',valform);
             }
         }
         this.displayOn(0);
@@ -91,7 +91,7 @@ Ext.define('TDK.controller.Cassetlocation', {
             Ext.MessageBox.confirm('Confirm', 'Delete Location : ' + GroupName + '?', 
             function(btnText){
                 if(btnText === "yes"){
-                    TDK.view.temp.Run.proses('assetlocation/delete',form.getForm().getValues());
+                    TDK.view.temp.Run.proses('Assetlocation/delete',form.getForm().getValues());
                     this.donew();
                 }
             }
