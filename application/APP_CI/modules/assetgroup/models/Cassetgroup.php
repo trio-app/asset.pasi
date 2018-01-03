@@ -1,29 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class D_assetgroup extends CI_Model {
+class Cassetgroup extends CI_Model {
 
-function deleteDT()
+function insertDT()
             {
                 $this->load->database();
                 $data = array(
                         'GroupName' => $this->input->post('GroupName'),
                         'GroupDescription' => $this->input->post('GroupDescription')
                 );
-                $this->db->where('GroupID', $this->input->post('GroupID'));
-                
-                if ( ! $this->db->delete('mgroup', $data))
+
+                if ( ! $this->db->insert('mgroup', $data))
                 {
                         $error = $this->db->error(); // Has keys 'code' and 'message'
                 }else{
                     $error = array(
                         'success'=>true,
-                        'message'=>$this->input->post('GroupName'). ' Delete Successfuly'
+                        'message'=> $this->input->post('GroupName') . ' Insert Successfuly'
                     );
                 }
                 
-                return json_encode($error);                 
-                
+                return json_encode($error); 
             }
     
 }

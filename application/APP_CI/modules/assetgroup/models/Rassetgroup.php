@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class R_assetgroup extends CI_Model {
+class Rassetgroup extends CI_Model {
    
 function load_default($start,$limit,$filter){
     $dtfilter = json_decode($filter,true);
