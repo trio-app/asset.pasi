@@ -7,6 +7,7 @@ function menujs(){
         $this->load->database();
         $this->db->select('
                 cpaccess.accGroup,
+                cpmenu.menuID as ID,
                 cpmenudetail.menuID,
                 cpmenudetail.menuParrent,
                 cpmenudetail.menuControl,
@@ -35,6 +36,8 @@ function menujs(){
                     $hasbol = false;
                     };
             $parrent[]= array(
+                'id'=>$value['ID'],
+                'panel'=>'Parrent',
                 "text"=>$value["menuParrent"],
                 'expanded'=>$hasbol,
                 'children' => $this->menuchild($value["menuParrent"])

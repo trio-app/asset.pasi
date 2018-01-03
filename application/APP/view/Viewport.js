@@ -7,7 +7,7 @@ Ext.define('TDK.view.Viewport', {
             'TDK.view.temp.Run'
         ], 
     
-    //controller:'Cmainpage',
+    controller:'Cmainpage',
     layout: 'card',
     border:false,
     frame:false,

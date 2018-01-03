@@ -21,7 +21,7 @@ Ext.define('TDK.controller.Cmainpage', {
             }
             
         });
-        this.renderpage();
+        //this.renderpage();
     },
     logout:function(){
         var panel = this.getView();
