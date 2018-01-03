@@ -1,4 +1,4 @@
-Ext.define('TDK.view.Tassetdata.Tassetdata', {
+Ext.define('TDK.view.tassetdata.tassetdata', {
     extend: 'Ext.panel.Panel',
     config: {},
     requires: [
@@ -6,8 +6,12 @@ Ext.define('TDK.view.Tassetdata.Tassetdata', {
         'TDK.view.temp.Trickmenu',
         'TDK.store.STtassetdata',
         'TDK.store.STassetgroup',
-        'TDK.view.Tassetdata.FRMtassetdata',
-        'TDK.view.Tassetdata.GRIDtassetdata'
+        'TDK.store.STassetpic',
+        'TDK.store.STassetlocation',
+        'TDK.store.STassetcategory',
+        'TDK.store.STassetcondition',
+        'TDK.view.tassetdata.FRMtassetdata',
+        'TDK.view.tassetdata.GRIDtassetdata'
     ],
     constructor: function (config) {
         return this.callParent(arguments);

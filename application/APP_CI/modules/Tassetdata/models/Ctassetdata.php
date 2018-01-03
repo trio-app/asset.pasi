@@ -1,33 +1,43 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_tassetdata extends CI_Model {
+class Ctassetdata extends CI_Model {
 
 function insertDT($dtrows)
             {
                 $this->load->database();
                 $data = array(
-                    'AssetNo' => $dtrows['AssetNo'],
-                    //'AssetNoRegDept' => $dtrows['AssetNoRegDept'],
-                    'AssetKey' => $dtrows['AssetKey'],
-                    'AssetSAPNo' => $dtrows['AssetSAPNo'],
-                    'AssetName' => $dtrows['AssetName'],
-                    'AssetGroup' => $dtrows['AssetGroup'],
-                    'AssetCategory' => $dtrows['AssetCategory'],
-                    'AssetLocation' => $dtrows['AssetLocation'],
-                    'AssetSublocation' => $dtrows['AssetSublocation'],
-                    //'AssetCostcenter' => $dtrows['AssetCostcenter'],
-                    'AssetPic' => $dtrows['AssetPic'],
-                    'AssetCondition' => $dtrows['AssetCondition'],
-                    'AssetRemark' => $dtrows['AssetRemark'],
-                    'AssetInfo' => $dtrows['AssetInfo'],
-                    'AssetAquisitiondate' => $dtrows['AssetAquisitiondate'],
-                    'AssetLabel' => $dtrows['AssetLabel'],
-                    'AssetCost' => $dtrows['AssetCost']
+                    'AssetNo' => $this->input->post('AssetNo'),
+                    //'AssetNoRegDept' => $this->input->post('AssetNoRegDept'),
+                    'AssetKey' => $this->input->post('AssetKey'),
+                    'AssetSAPNo' => $this->input->post('AssetSAPNo'),
+                    'AssetName' => $this->input->post('AssetName'),
+                    'AssetGroup' => $this->input->post('AssetGroup'),
+                    'AssetCategory' => $this->input->post('AssetCategory'),
+                    'AssetLocation' => $this->input->post('AssetLocation'),
+                    'AssetSublocation' => $this->input->post('AssetSublocation'),
+                    //'AssetCostcenter' => $this->input->post('AssetCostcenter'),
+                    'AssetPic' => $this->input->post('AssetPic'),
+                    'AssetCondition' => $this->input->post('AssetCondition'),
+                    'AssetRemark' => $this->input->post('AssetRemark'),
+                    'AssetInfo' => $this->input->post('AssetInfo'),
+                    'AssetAquisitiondate' => $this->input->post('AssetAquisitiondate'),
+                    'AssetLabel' => $this->input->post('AssetLabel'),
+                    'AssetCost' => $this->input->post('AssetCost')
                 );
 
-                $this->db->insert('masset', $data);
                 
+                if ( ! $this->db->insert('masset', $data))
+                {
+                        $error = $this->db->error(); // Has keys 'code' and 'message'
+                }else{
+                    $error = array(
+                        'success'=>true,
+                        'message'=> $this->input->post('AssetName') . ' Insert Successfuly'
+                    );
+                }
+                
+                return json_encode($error); 
             }
     
 }

@@ -1,4 +1,4 @@
-Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
+Ext.define('TDK.view.tassetdata.FRMtassetdata', {
     extend: 'Ext.form.Panel',
     alias:'widget.FRMtassetdata',
     reference:'FRMtassetdata',
@@ -16,7 +16,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
             margin: '0 0 5 0'
         },
         items: [
-            {  name: 'AssetID',fieldLabel: 'Asset ID ',width:200, hidden:true },
+            {  name: 'AssetID',fieldLabel: 'Asset ID ',width:200,  },
             { xtype: 'container', layout: 'hbox',
                 defaults: {
                     margin: '0 5 5 0',
@@ -46,7 +46,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
                     xtype: 'textfield'
                 },
                 items: [
-                    {  name: 'AssetPic', fieldLabel: 'PIC ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, store:['ASSET','INVENTARIS']},
+                    {  name: 'AssetPic', fieldLabel: 'PIC ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, valueField :'PicName', displayField: 'PicName',  queryMode:'local', store: { type: 'STassetpic'} },
                     {  name: 'AssetGroup', fieldLabel: 'Group ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, valueField :'GroupName', displayField: 'GroupName',  queryMode:'local', store: { type: 'STassetgroup'} }
                 ]
             },
@@ -57,7 +57,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
                     xtype: 'textfield'
                 },
                 items: [
-                    {  name: 'AssetCategory', fieldLabel: 'Category ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, store:['ASSET','INVENTARIS']},
+                    {  name: 'AssetCategory', fieldLabel: 'Category ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, valueField :'CategoryName', displayField: 'CategoryName',  queryMode:'local', store: { type: 'STassetcategory'} },
                     {  name: 'AssetCost', fieldLabel: 'Asset Cost ', width:300, xtype: 'numberfield', allowBlank: false, minValue: 0}
                 ]
             },
@@ -68,7 +68,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
                     xtype: 'textfield'
                 },
                 items: [
-                    {  name: 'AssetLocation', fieldLabel: 'Location ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, store:['ASSET','INVENTARIS']},
+                    {  name: 'AssetLocation', fieldLabel: 'Location ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false,valueField :'LocName', displayField: 'LocName',  queryMode:'local', store: { type: 'STassetlocation'} },
                     {  name: 'AssetSublocation', fieldLabel: 'Sub Location ', width:300, allowBlank: false}
                 ]
             },
@@ -79,7 +79,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
                     xtype: 'textfield'
                 },
                 items: [
-                    {  name: 'AssetCondition', fieldLabel: 'Condition ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false, store:['ASSET','INVENTARIS']},
+                    {  name: 'AssetCondition', fieldLabel: 'Condition ', width:300, xtype: 'combo', forceSelection: true, allowBlank: false,valueField :'conName', displayField: 'conName',  queryMode:'local',  store:{ type: 'STassetcondition' }},
                     {  name: 'AssetAquisitiondate', fieldLabel: 'Aquisition Date ', width:300, xtype: 'datefield',format: 'Y-m-d',submitFormat: 'Y-m-d', allowBlank: false}
                 ]
             },
@@ -91,7 +91,7 @@ Ext.define('TDK.view.Tassetdata.FRMtassetdata', {
                 },
                 items: [
                     {  name: 'AssetRemark', fieldLabel: 'Remark ', width:350, height: 60, xtype: 'textareafield', allowBlank: false},
-                    {  name: 'AssetLabel', fieldLabel: 'Type Label ', width:250, xtype: 'combo', forceSelection: true, allowBlank: false, store:['BESAR','KECIL']},
+                    {  name: 'AssetLabel', fieldLabel: 'Type Label ', width:250, xtype: 'combo', forceSelection: true, allowBlank: false, store:['KECIL']},
                 ]
             },
             

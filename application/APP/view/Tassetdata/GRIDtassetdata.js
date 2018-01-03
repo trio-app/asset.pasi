@@ -1,4 +1,4 @@
-Ext.define('TDK.view.Tassetdata.GRIDtassetdata', {
+Ext.define('TDK.view.tassetdata.GRIDtassetdata', {
     extend: 'Ext.grid.Panel',
     alias:'widget.GRIDtassetdata',
     reference:'GRIDtassetdata',

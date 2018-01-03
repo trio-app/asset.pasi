@@ -64,13 +64,12 @@ Ext.define('TDK.controller.Ctassetdata', {
         var st = form.getForm().findField('AssetID').getValue();
         if(form.isValid()){
             if (st===''){
-            TDK.view.temp.Run.proses('Modjs/jsondata/tassetdata/create',valform);
+                TDK.view.temp.Run.proses('Tassetdata/create',valform);
             }else{
-
-                TDK.view.temp.Run.proses('Modjs/jsondata/tassetdata/update',valform);
+                TDK.view.temp.Run.proses('Tassetdata/update',valform);
             }
+            this.displayOn(0);
         }
-        this.displayOn(0);
     },
     onRowdblclick: function(me, record, item, index) {
         this.displayOn(1);
@@ -84,14 +83,14 @@ Ext.define('TDK.controller.Ctassetdata', {
             return false;
         }
         var form = this.lookupReference('FRMtassetdata');
-        var groupID = form.getForm().findField("AssetID").getValue();
+        var AssetID = form.getForm().findField("AssetID").getValue();
         
         var AssetName = form.getForm().findField("AssetName").getValue();
-        if (groupID!=='') {
+        if (AssetID!=='') {
             Ext.MessageBox.confirm('Confirm', 'Delete Asset : ' + AssetName + '?', 
             function(btnText){
                 if(btnText === "yes"){
-                    TDK.view.temp.Run.proses('Modjs/jsondata/tassetdata/delete',form.getForm().getValues());
+                    TDK.view.temp.Run.proses('Tassetdata/delete',form.getForm().getValues());
                     this.donew();
                 }
             }
