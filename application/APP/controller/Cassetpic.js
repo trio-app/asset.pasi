@@ -64,13 +64,12 @@ Ext.define('TDK.controller.Cassetpic', {
         var st = form.getForm().findField('PicID').getValue();
         if(form.isValid()){
             if (st===''){
-            TDK.view.temp.Run.proses('Assetpic/create',valform);
+                TDK.view.temp.Run.proses('Assetpic/create',valform);
             }else{
-
                 TDK.view.temp.Run.proses('Assetpic/update',valform);
             }
+            this.displayOn(0);
         }
-        this.displayOn(0);
     },
     onRowdblclick: function(me, record, item, index) {
         this.displayOn(1);
