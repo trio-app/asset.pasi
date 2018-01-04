@@ -1,5 +1,5 @@
 Ext.define('TDK.view.stobylocation.GRIDstobylocation', {
-    extend: 'Ext.grid.Panel',
+    extend: 'Ext.ux.ExportableGrid',
     alias:'widget.GRIDstobylocation',
     reference:'GRIDstobylocation',
     frame: false,
