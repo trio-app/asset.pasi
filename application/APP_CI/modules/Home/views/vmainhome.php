@@ -8,6 +8,16 @@
                 <link  href="<?php echo extjs_url(); ?>fonts/font-awesome.min.css" rel="stylesheet" />
 		<script src="<?php echo extjs_url(); ?>build/classic/theme-classic/theme-classic.js"></script>
 		
+                <!-- required label printing scripts -->
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/qz/rsvp-3.1.0.min.js'; ?>"></script>
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/qz/sha-256.min.js'; ?>"></script>
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/qz/qz-tray.js'; ?>"></script>
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/qz/qz-config.js'; ?>"></script>
+                
+                <!-- required exporter grid -->
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/filesaver/FileSaver.js'; ?>"></script>
+                <script type="text/javascript" src="<?php echo base_url().'system/inc/jszip/dist/jszip.js'; ?>"></script>
+                
 	<script type="text/javascript">
 		// base variable
 		var base_url = '<?php echo base_url(); ?>';
