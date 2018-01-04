@@ -7,6 +7,11 @@ function load_default($start,$limit,$filter){
 
     $this->load->database();
     $this->db->select(" SQL_CALC_FOUND_ROWS masset.assetno,
+                            masset.assetno as AssetNo,
+                            masset.AssetKey,
+                            masset.AssetGroup,
+                            masset.AssetCategory,
+                            masset.AssetSublocation,
                             masset.AssetName,
                             masset.AssetLocation,
                             IFNULL(hasilopname.chlocation ,'') as AssetLocationNew,
