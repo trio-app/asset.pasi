@@ -26,8 +26,14 @@ Ext.define('TDK.controller.Cassetcategory', {
             'trickmenu button[pid=gridtable]':{
               click: this.dogridclick
             },
+            'trickmenu button[pid=upload]':{
+              click: this.douploadview
+            },
             'GRIDassetcategory': {
                 itemdblclick: this.onRowdblclick
+            },
+            'FRMuploadcategory > form button[action=upload]': {
+                click: this.uploadexcel
             }
         });
     },
@@ -78,7 +84,35 @@ Ext.define('TDK.controller.Cassetcategory', {
         form.getForm().setValues(record.getData());
         
     },
-    
+
+    douploadview: function(){
+        this.getView().add({
+            xtype : 'FRMuploadcategory'
+        }).show();
+    },
+    uploadexcel: function(){
+        var form = this.lookupReference('FRMuploadcategory');
+        var grid = this.lookupReference('GRIDassetcategory');
+        if(form.down('form').isValid()){
+            form.down('form').submit({
+                url: base_url+'Assetcategory/uploadfile',
+                waitMsg: 'Uploading your file...',
+                scope:this,
+                success: function(fp, action){
+                   var data = Ext.decode(action.response.responseText);
+                   Ext.MessageBox.alert("Success: " , data.msg);
+                   form.close();
+                   grid.store.load();
+                    
+                },
+                failure : function(fp,action)
+                {
+                    var data = Ext.decode(action.response.responseText);
+                    Ext.MessageBox.alert("Failure: " , data.msg);
+                }
+            });
+        }
+    },
     dodelete:function(){
         if (this.getdisplayon() === 0){
             return false;
