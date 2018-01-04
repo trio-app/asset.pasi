@@ -17,7 +17,11 @@
                 <!-- required exporter grid -->
                 <script type="text/javascript" src="<?php echo base_url().'system/inc/filesaver/FileSaver.js'; ?>"></script>
                 <script type="text/javascript" src="<?php echo base_url().'system/inc/jszip/dist/jszip.js'; ?>"></script>
-                
+        <style>
+            .no-scan{
+                color: #ff0000;
+            }
+        </style>      
 	<script type="text/javascript">
 		// base variable
 		var base_url = '<?php echo base_url(); ?>';

@@ -1,7 +1,8 @@
 Ext.Loader.setConfig({
     enabled: true,
     paths: {
-        'Ext.ux': extjs_url + 'build/packages/ux'
+        //'Ext.ux': extjs_url + 'build/packages/ux'
+        'Ext.ux': base_url + 'system/inc'
     }
 });
 

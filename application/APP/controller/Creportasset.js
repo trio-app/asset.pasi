@@ -4,6 +4,9 @@ Ext.define('TDK.controller.Creportasset', {
     
     init: function (view) {
         this.control({
+            'trickmenu':{
+                render: this.loadmenu
+            },
             'trickmenu button[pid=refresh]':{
               click: this.dorefresh
             },
@@ -12,6 +15,16 @@ Ext.define('TDK.controller.Creportasset', {
             },
         });
 
+    },
+    loadmenu:function(me){
+        me.items.each(function( item ) {
+            item.setVisible(false);
+        });
+        var panel = me.items;
+        panel.getAt(11).setVisible(true);
+        panel.getAt(12).setVisible(true);
+        panel.getAt(13).setVisible(true);
+        panel.getAt(16).setVisible(true);
     },
     doexport: function(){
         var date = Ext.Date.format(new Date(), 'Y-m-d');
