@@ -7,6 +7,7 @@ Ext.define('TDK.view.assetpic.assetpic', {
         'TDK.view.temp.Trickmenu',
         'TDK.store.STassetpic',
         'TDK.view.assetpic.FRMassetpic',
+        'TDK.view.assetpic.FRMuploadpic',
         'TDK.view.assetpic.GRIDassetpic'
     ],
     constructor: function (config) {
