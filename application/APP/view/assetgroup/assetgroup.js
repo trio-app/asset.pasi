@@ -7,7 +7,8 @@ Ext.define('TDK.view.assetgroup.assetgroup', {
         'TDK.view.temp.Trickmenu',
         'TDK.store.STassetgroup',
         'TDK.view.assetgroup.FRMassetgroup',
-        'TDK.view.assetgroup.GRIDassetgroup'
+        'TDK.view.assetgroup.GRIDassetgroup',
+        'TDK.view.assetgroup.FRMuploadgroup'
     ],
     constructor: function (config) {
         return this.callParent(arguments);
@@ -40,7 +41,6 @@ Ext.define('TDK.view.assetgroup.assetgroup', {
                     items:[
                         {xtype:'GRIDassetgroup'},
                         {xtype:'FRMassetgroup'}
-                        
                     ]
                     
                 }

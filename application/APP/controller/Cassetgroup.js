@@ -23,11 +23,17 @@ Ext.define('TDK.controller.Cassetgroup', {
             'trickmenu button[pid=refresh]':{
               click: this.dorefresh
             },
+            'trickmenu button[pid=upload]':{
+              click: this.douploadview
+            },
             'trickmenu button[pid=gridtable]':{
               click: this.dogridclick
             },
             'GRIDassetgroup': {
                 itemdblclick: this.onRowdblclick
+            },
+            'FRMuploadgroup > form button[action=upload]': {
+                click: this.uploadexcel
             }
         });
     },
@@ -76,9 +82,35 @@ Ext.define('TDK.controller.Cassetgroup', {
         this.displayOn(1);
         var form = this.lookupReference('FRMassetgroup');
         form.getForm().setValues(record.getData());
-        
     },
-    
+    douploadview: function(){
+        this.getView().add({
+            xtype : 'FRMuploadgroup'
+        }).show();
+    },
+    uploadexcel: function(){
+        var form = this.lookupReference('FRMuploadgroup');
+        var grid = this.lookupReference('GRIDassetgroup');
+        if(form.down('form').isValid()){
+            form.down('form').submit({
+                url: base_url+'Assetgroup/uploadfile',
+                waitMsg: 'Uploading your file...',
+                scope:this,
+                success: function(fp, action){
+                   var data = Ext.decode(action.response.responseText);
+                   Ext.MessageBox.alert("Success: " , data.msg);
+                   form.close();
+                   grid.store.load();
+                    
+                },
+                failure : function(fp,action)
+                {
+                    var data = Ext.decode(action.response.responseText);
+                    Ext.MessageBox.alert("Failure: " , data.msg);
+                }
+            });
+        }
+    },
     dodelete:function(){
         if (this.getdisplayon() === 0){
             return false;
