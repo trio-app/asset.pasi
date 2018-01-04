@@ -7,6 +7,7 @@ Ext.define('TDK.view.assetcategory.assetcategory', {
         'TDK.view.temp.Trickmenu',
         'TDK.store.STassetcategory',
         'TDK.view.assetcategory.FRMassetcategory',
+        'TDK.view.assetcategory.FRMuploadcategory',
         'TDK.view.assetcategory.GRIDassetcategory'
     ],
     constructor: function (config) {

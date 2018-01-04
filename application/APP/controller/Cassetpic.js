@@ -26,8 +26,14 @@ Ext.define('TDK.controller.Cassetpic', {
             'trickmenu button[pid=gridtable]':{
               click: this.dogridclick
             },
+            'trickmenu button[pid=upload]':{
+              click: this.douploadview
+            },
             'GRIDassetpic': {
                 itemdblclick: this.onRowdblclick
+            },
+            'FRMuploadpic > form button[action=upload]': {
+                click: this.uploadexcel
             }
         });
     },
@@ -77,7 +83,34 @@ Ext.define('TDK.controller.Cassetpic', {
         form.getForm().setValues(record.getData());
         
     },
-    
+    douploadview: function(){
+        this.getView().add({
+            xtype : 'FRMuploadpic'
+        }).show();
+    },
+    uploadexcel: function(){
+        var form = this.lookupReference('FRMuploadpic');
+        var grid = this.lookupReference('GRIDassetpic');
+        if(form.down('form').isValid()){
+            form.down('form').submit({
+                url: base_url+'Assetpic/uploadfile',
+                waitMsg: 'Uploading your file...',
+                scope:this,
+                success: function(fp, action){
+                   var data = Ext.decode(action.response.responseText);
+                   Ext.MessageBox.alert("Success: " , data.msg);
+                   form.close();
+                   grid.store.load();
+                    
+                },
+                failure : function(fp,action)
+                {
+                    var data = Ext.decode(action.response.responseText);
+                    Ext.MessageBox.alert("Failure: " , data.msg);
+                }
+            });
+        }
+    },
     dodelete:function(){
         if (this.getdisplayon() === 0){
             return false;

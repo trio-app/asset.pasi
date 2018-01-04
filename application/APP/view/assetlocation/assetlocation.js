@@ -7,6 +7,7 @@ Ext.define('TDK.view.assetlocation.assetlocation', {
         'TDK.view.temp.Trickmenu',
         'TDK.store.STassetlocation',
         'TDK.view.assetlocation.FRMassetlocation',
+        'TDK.view.assetlocation.FRMuploadlocation',
         'TDK.view.assetlocation.GRIDassetlocation'
     ],
     constructor: function (config) {
