@@ -16,7 +16,7 @@ Ext.define('TDK.view.tassetdata.FRMtassetdata', {
             margin: '0 0 5 0'
         },
         items: [
-            {  name: 'AssetID',fieldLabel: 'Asset ID ',width:200,  },
+            {  name: 'AssetID',fieldLabel: 'Asset ID ',width:200, hidden: true },
             { xtype: 'container', layout: 'hbox',
                 defaults: {
                     margin: '0 5 5 0',
