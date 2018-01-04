@@ -1,3 +1,11 @@
+Ext.Loader.setConfig({
+    enabled: true,
+    paths: {
+        //'Ext.ux': extjs_url + 'build/packages/ux'
+        'Ext.ux': base_url + 'system/inc' // Lokasi Grid untuk Export
+    }
+});
+
 Ext.define('TDK.view.stobypic.stobypic', {
     extend: 'Ext.panel.Panel',
     config: {},
@@ -6,7 +14,8 @@ Ext.define('TDK.view.stobypic.stobypic', {
         'TDK.controller.Cstobypic',
         'TDK.view.temp.Trickmenu',
         'TDK.store.STstobypic',
-        'TDK.view.stobypic.GRIDstobypic'
+        'TDK.view.stobypic.GRIDstobypic',
+        'Ext.ux.ExportableGrid'
     ],
     constructor: function (config) {
         return this.callParent(arguments);
